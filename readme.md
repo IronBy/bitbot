@@ -12,8 +12,9 @@ docker build -t bitbot .
 
 ## Run Container
 ```powershell
-docker run -d --name prs_slack_bot -e SLACK_API_TOKEN=<your api toker> -e BITBUCKET_USERNAME=<BitBucket Username> -e BITBUCKET_PASSWORD=<User Password> bitbot
+docker run -d --name prs_slack_bot -e SLACK_API_TOKEN=<your api toker> -e BITBUCKET_USERNAME=<BitBucket Username> -e BITBUCKET_PASSWORD=<User Password> -e BITBUCKET_URL=<base url to BitBucket> bitbot
 ```
+'base url to BitBucket' should not contain either 'http' or 'https'. It's just domain and port (if necessary)
 
 ## Use Bot Commands
 * `get prs` - returns list of all open Pull Requests

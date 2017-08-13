@@ -47,7 +47,7 @@ def prMatches(pr, taskId):
 
 def readOpenPrs():
   response = requests.get(
-    "https://git.itransition.com/rest/api/latest/projects/LLS/repos/lyles/pull-requests",
+    "https://{}/rest/api/latest/projects/LLS/repos/lyles/pull-requests".format(os.environ['BITBUCKET_URL']),
     auth=(os.environ['BITBUCKET_USERNAME'], os.environ['BITBUCKET_PASSWORD']))
 
   if response.status_code > 200:
