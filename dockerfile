@@ -7,8 +7,9 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 RUN mkdir c:/slackbot
 
 ADD ./*.py c:/slackbot/
+ADD ./requirements.txt c:/slackbot/
 
-RUN pip install slackbot
+RUN pip install -r c:/slackbot/requirements.txt
 
 WORKDIR c:/slackbot/
 
